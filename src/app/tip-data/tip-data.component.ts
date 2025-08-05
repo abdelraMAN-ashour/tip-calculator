@@ -25,7 +25,7 @@ export class TipDataComponent {
   }
   onReset(){
     let data=this.tipService.data;
-    if(data&&!Object.values(data!).some((e)=>e==null)){
+    if(data&&!Object.values(data!).some((e)=>e==null)&&this.tipService.showReset()){
       this.tipService.reset.set(true);
       this.tipService.showReset.set(false)
     }
