@@ -1,0 +1,102 @@
+
+:host{
+    width: 50%;
+    padding: 0 3em;
+}
+.head-input{
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+img{
+    left: 20px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+input,button{
+    border-radius: 5px;
+}
+input{
+    font-size: 1.3rem;
+    color: var(--main-color);
+    font-weight: 600;
+    padding-right: 0.7em;
+    text-align: end;
+    display: block;
+    height: 100%;
+    border: none;
+    width: 100%;   
+    background-color: var(--input-color);
+}
+input[type="number"]::-webkit-inner-spin-button,::-webkit-outer-spin-button{
+    display: none;
+}
+p{
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.input-field{
+    height: 3.3rem;
+    position: relative;    
+}
+.input-field-btns{
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3 ,1fr);
+}
+.input-field-btns > *{
+    background-color: var(--main-color);
+    color: var(--card-white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.3rem;
+}
+.input-field-btns button:hover{
+    background-color: var(--bg-color);
+    color: var(--main-color);
+}
+.input-field-btns input{
+    color: var(--main-color);
+    background-color: var(--input-color);
+}
+.input-field-btns input::placeholder{
+    font-weight: 900;
+    padding-left: 12px;
+    text-align: center;
+    color: var(--main-color);
+}.input-field input::placeholder{
+    font-weight: 900;
+    color: var(--light-gray);
+}
+.ip:not(:last-child) {
+  margin-bottom: 3.5em;
+}
+input:focus{
+    outline-color: var(--light-green); 
+}
+.wrong-value{
+    margin-top: 0.2em;
+    color: var(--alert-color);
+    text-align: end;
+}
+
+.ip .input-field-btns .active{
+    color: var(--main-color);
+    background-color: var(--light-green);
+}
+.wrong-value-input:focus{
+    outline-color: var(--alert-color);
+}
+@media (max-width:800px) {
+    .input-field-btns{
+        grid-template-columns: repeat(2 ,1fr);
+        }
+    
+}

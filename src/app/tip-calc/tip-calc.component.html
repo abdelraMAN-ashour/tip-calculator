@@ -1,0 +1,44 @@
+<form >
+    <div class="ip">
+        <div class="head-input">
+            <p>Bill</p>
+            @if(wrongValue.bill){
+               <p class="wrong-value">Enter a valid number</p>
+            }
+        </div>
+        <div class="input-field">
+            <img src="icon-dollar.svg" alt="dollar-icon" class="icon">
+            <input type="number" name="bill" id="bill" [(ngModel)]="bill" placeholder="0" (input)="onInputing($event)" [class.wrong-value-input]="wrongValue.bill">
+        </div>
+    </div>
+    <div class="ip">
+        <p>Select Tip %</p>
+        <div class="input-field-btns">
+            @for(tip of tips;track $index){
+                @if(!$last){
+                    <button type="button" (click)="selectTip(tip)" [class.active]="tip===selectedTip">{{tip}}%</button>
+                }@else {
+                    <input type="number" placeholder="Custom" name="custom" id="custom" [(ngModel)]="custom" (input)="onInputing($event)" (click)="onInputClick()" [class.wrong-value-input]="wrongValue.custom">
+                }
+            }
+        </div>
+        @if(wrongValue.custom){
+           <p class="wrong-value">wrong value</p>
+        }
+    </div>
+    <div class="ip">
+        <div class="head-input">
+            <p>Number of People</p>
+            @if (isZero) {
+               <p class="wrong-value">Can't be zero</p>
+            }
+            @if(wrongValue.numPeople){
+               <p class="wrong-value">Enter a valid number</p>
+            }
+        </div>
+        <div class="input-field">
+            <img src="icon-person.svg" alt="dollar-icon" class="icon">
+            <input type="number" name="numPeople" id="numPeople" [(ngModel)]="numPeople" placeholder="0" (input)="onInputing($event)" [class.wrong-value-input]="wrongValue.numPeople||isZero">
+        </div>
+    </div>
+</form>

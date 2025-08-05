@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TipCalcComponent } from "./tip-calc/tip-calc.component";
+import { TipDataComponent } from "./tip-data/tip-data.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [TipCalcComponent, TipDataComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'tip-calc';
+
 }

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="upper">
+        <div>
+            <div class="info">
+                <h2>Tip Amount</h2>
+                <p>/ person</p>
+            </div>
+                <h1>
+                    ${{getData.amount|number:"1.2-2"}}
+                </h1>
+        </div>
+        <div>
+            <div class="info">
+                <h2>Total</h2>
+                <p>/ person</p>
+            </div>
+                <h1>
+                    ${{getData.total|number:"1.2-2"}}
+                </h1>
+        </div>
+    </div>
+    <button type="button" (click)="onReset()" [class.show-reset]="showReset">RESET</button>
+</div>
